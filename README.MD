@@ -29,12 +29,19 @@ The TotalAgility package contains:
     - Global Variable: Agent Tool Registry - holds the registry of tools or worker agents available to a Tool Use agent
  - Category: Agent Services - contains supporting services for the agents
     - Service - Analyse Document - sync	- used to provide meta data about a file to the calling agent
-    - Service - Base64 to TA Document - used to convert Base64 into a TotalAgility Document (avoids needing to pass large blocks of Base64 data as variables in the agent process)		
+    - Service - Base64 to TA Document - used to convert Base64 into a TotalAgility Document (avoids needing to pass large blocks of Base64 data as variables in the agent process)	
+    - AgentWorktype - worktype for agent tracking
+    - MDCleaner.dll - a utility DLL to remove MD formatting from AI generated json & html
  - Custom service group: Agent Services	
     - Custom service: Get Session - utility service to grab the user's session id for use when invoking tools (ensures tools are invoked with the same permissions and identity as the calling user)
  - TotalAgility Agent Documents	Extraction group - documents processed by agents are classified using this extraction group. Alls retention and knowledge base settings to be independently configured for agent documetns.
 
 **Note:** the examples only illustrate the patterns, and are not fully functioning agents. To give the agents power, create tools for them to use and include them in the registry variable (alternatives to using a static variable include a proxy service to provide tools, semantic intent routing using the knowledge base or using a Model Context Protocol server).
+
+## Post Package Import:
+1. Navigate to: System data > Web service references
+2. Set the category to "Default Category"
+3. Edit the web service "TA Base URL" and replace {{your_host}} with the hostname for your TotalAgility environment: https://{{your_host}}/services/sdk/v1/
 
 ## What's in the postman collection:
 Import this file into [Postman](https://www.postman.com/) to see examples REST calls to invoke the agents, with or without documents attached. 
@@ -46,3 +53,8 @@ Create an "environment" for this file to provide:
 
 The web services can be used to call agents on TotalAgility, for example from [Microsoft Teams](https://github.com/TungstenAutomationLabs/TotalAgility-MSTeams-Agent)
 	
+## Where to learn more:
+[Additional content, demos and videos on  using Agents & RAG with TotalAgility](https://view-su2.highspot.com/viewer/3c5567ff29b0def9a15fd08eebb06230).
+
+
+
