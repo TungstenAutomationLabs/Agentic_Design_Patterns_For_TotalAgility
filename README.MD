@@ -11,6 +11,7 @@ Sample packages demonstrating agentic design patterns using Tungsten TotalAgilit
 - [Quick Start](#quick-start)
 - [Approach](#approach)
 - [Package Contents](#package-contents)
+- [Repository Structure](#repository-structure)
 - [Setup Instructions](#setup-instructions)
 - [Using the Postman Collection](#using-the-postman-collection)
 - [Next Steps](#next-steps)
@@ -101,6 +102,35 @@ These examples are **templates only** and are not fully functional agents. To ma
    - Proxy service for dynamic tool provision
    - Semantic intent routing using the knowledge base
    - Model Context Protocol (MCP) server integration
+
+## Repository Structure
+
+```
+.
+├── LICENSE                           # License file
+├── README.md                         # This file
+├── images/                           # Documentation images
+│   └── Agent_IO_Signature.png       # Visual diagram of the agent architecture
+├── packages/                         # TotalAgility packages
+│   └── Agentic Design Patterns Examples.zip    # Importable TotalAgility package with agent templates
+├── postman/                          # API testing resources
+│   └── Agentic_Design_Patterns_For_TotalAgility.postman_collection.json  # REST API examples
+├── prompts/                          # Agent prompt templates and patterns
+│   ├── Identify Intent & Next Action Planning.md     # Prompt for intent identification and planning
+│   ├── reflection.md                 # Prompt template for the Reflection pattern
+│   └── Report Formatting & Styling Agent.md          # Prompt for report formatting and styling
+└── registry/                         # Tool and agent registry
+    └── Agent Tool Registry.json      # JSON registry of available tools and agents
+```
+
+### Key Files Explained
+
+| File/Folder | Purpose |
+|-------------|---------|
+| **packages/Agentic Design Patterns Examples.zip** | Main TotalAgility package. Import this into your TotalAgility environment to get all agent templates and supporting services. |
+| **prompts/*.md** | System prompts for agent implementations. Reference these or customize them for your agents. |
+| **registry/Agent Tool Registry.json** | Central registry mapping tools to their names, descriptions, and signatures. Agents reference this to discover available tools. |
+| **postman/...json** | Pre-built REST API requests for testing agents. Import into Postman for quick validation. |
 
 ## Setup Instructions
 
