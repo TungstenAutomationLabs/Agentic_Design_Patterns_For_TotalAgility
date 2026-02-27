@@ -1,0 +1,36 @@
+{
+  "agent_processes": [
+    {
+      "intent": "direct_reply",
+      "processID": "NA",
+      "version": 1.0,
+      "name": "Direct Reply",
+      "max_invocations_per_cycle": "1",
+      "description": "Responds directly back to the user with the provided prompt, without any additional actions by agents."
+    },
+        {
+      "intent": "sync_agent",
+      "processID": "6B8642DEC8B24FF1925FAE0CA0BAE778",
+      "version": 1.0,
+      "name": "Example - Sync Agent",
+      "max_invocations_per_cycle": "1",
+      "description": "Example agent to test calling a synchronous worker agent."
+    },
+    {
+      "intent": "async_agent",
+      "processID": "4F17012DABCD4B64B56E27441515110F",
+      "version": 1.0,
+      "name": "Example - Async Agent",
+      "max_invocations_per_cycle": "1",
+      "description": "Example agent to test calling a asynchronous worker agent."
+    },
+    {
+      "intent": "case_agent",
+      "processID": "151B90EE18044BA398D413FB963EEC18",
+      "version": 1.0,
+      "name": "Example - Case Agent",
+      "max_invocations_per_cycle": "1",
+      "description": "Example calling a long running case agent."
+    }
+  ]
+}
