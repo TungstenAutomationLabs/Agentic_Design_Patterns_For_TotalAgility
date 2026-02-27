@@ -196,7 +196,7 @@ As appropriate, include company and/orproduct logos.
 
 ---
 
-## Here it the input to rewrite into a Tungsten branded HTML file: 
+## Here is the input to rewrite into a Tungsten branded HTML file: 
 {{Input Prompt}}
 
 {{Reflection_Guidance}}
