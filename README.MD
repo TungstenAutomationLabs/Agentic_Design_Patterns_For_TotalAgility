@@ -1,62 +1,162 @@
-# Agentic_Design_Patterns_For_TotalAgility
-This repo contains sample packages for use with Tungsten TotalAgility 2026.1+. The packages illustrate how to implement different agentic design patterns using TotalAgility's low code process orchestration.
+# Agentic Design Patterns for TotalAgility
 
-These packages illustrate some of the concepts described in this blog: [How to Build Enterprise Grade AI Agents with Agentic Design Patterns](https://www.tungstenautomation.com/learn/blog/build-enterprise-grade-ai-agents-agentic-design-patterns)
+Sample packages demonstrating agentic design patterns using Tungsten TotalAgility 2026.1+ low-code process orchestration.
 
-The package contains 2 examples:
- - [The Agentic AI Reflection Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-reflection-pattern)
- - [The Agentic AI Tool-Use Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-tool-use-pattern)
+> **Learn More**: See [How to Build Enterprise Grade AI Agents with Agentic Design Patterns](https://www.tungstenautomation.com/learn/blog/build-enterprise-grade-ai-agents-agentic-design-patterns)
 
-Packages for additional patterns are available by request:
- - [The Agentic AI Multi-Agent Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-multi-agent-pattern)
- - [The AI Planning Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-planning-pattern)
+## Table of Contents
 
-Also see: 
- - [TotalAgility Example Agent using an Agentic Loop](https://github.com/TungstenAutomationLabs/TotalAgilityExampleAgent ) 
+- [Included Patterns](#included-patterns)
+- [Prerequisites](#prerequisites)
+- [Quick Start](#quick-start)
+- [Approach](#approach)
+- [Package Contents](#package-contents)
+- [Setup Instructions](#setup-instructions)
+- [Using the Postman Collection](#using-the-postman-collection)
+- [Next Steps](#next-steps)
+- [Additional Resources](#additional-resources)
 
-## Approach:
-Key to the Tool Use pattern is agents, workflows or cases that are called by the agent have the same "agent" signature. This makes them universally pluggable, so the agent can invoke any worker agent or tool without needing a specific step or configuration. If teh agent needs structured data (e.g. json), this can be passed in using the "INPUT_PROMPT", simply describe the expected input format in the registry and the agent will do the rest.
+## Included Patterns
+
+### Included in This Package
+
+- **[The Agentic AI Reflection Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-reflection-pattern)** - Demonstrates AI agents that analyze and improve their own outputs
+- **[The Agentic AI Tool-Use Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-tool-use-pattern)** - Shows how agents dynamically select and invoke tools
+
+### Available by Request
+
+- **[The Agentic AI Multi-Agent Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-multi-agent-pattern)** - Orchestrating multiple agents working together
+- **[The AI Planning Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-planning-pattern)** - Strategic planning and decomposition of complex tasks
+
+### Related Projects
+
+- **[TotalAgility Example Agent using an Agentic Loop](https://github.com/TungstenAutomationLabs/TotalAgilityExampleAgent)** - Full-featured agent implementation example
+
+## Prerequisites
+
+- Tungsten TotalAgility 2026.1 or higher
+- Access to the TotalAgility platform with administrative or developer privileges
+- [Postman](https://www.postman.com/) (optional, for testing REST endpoints)
+- Basic familiarity with TotalAgility workflows, cases, and services
+
+## Quick Start
+
+1. **Import the Package** - Import the TotalAgility package into your environment
+2. **Configure Web Services** - Update the TA Base URL in System Data (see [Setup Instructions](#setup-instructions))
+3. **Explore Examples** - Navigate to `Category: Agentic Design Pattern Examples` to review agent templates
+4. **Test with Postman** - Use the included Postman collection to test agents with REST calls
+5. **Build Your Tools** - Create custom tools/agents and register them in the `Agent Tool Registry` 
+
+## Approach
+
+The **Tool-Use** pattern is built on the principle of **modular, composable agents**. Key design features:
+
+- **Unified IO Signature** - All agents, workflows, services, and cases share the same input/output contract, making them universally pluggable
+- **Dynamic Tool Invocation** - Agents can invoke any registered tool or worker agent without needing custom steps or configurations
+- **Flexible Data Handling** - Structured data requests (JSON, etc.) are handled via `INPUT_PROMPT`—simply describe the expected format in the registry and the agent handles the rest
+
+The result is an agent that adapts to available tools without modifications, enabling rapid iteration and extensibility.
+
 ![Agent IO Signature](./images/Agent_IO_Signature.png)
 
-## What's in the Package:
-The TotalAgility package contains:
- - Category: Agentic Design Pattern Examples - contains the agent examples		
-    - Example - Async Agent	- template for calling an async workflow (note: this workflow should only use automatic steps, for "Human in the Loop" processes use a "Case")	
-    - Example - Sync Agent - template for calling a sychronous agent		
-    - Example - Case Agent - template for launching a long running case
-    - Reflection - Report Formatting Agent - illustrates the "Reflection" pattern	
-    - Tool Use - Chat Agent - illustrates the "Tool Use" pattern
-    - Global Variable: Agent Tool Registry - holds the registry of tools or worker agents available to a Tool Use agent
- - Category: Agent Services - contains supporting services for the agents
-    - Service - Analyse Document - sync	- used to provide meta data about a file to the calling agent
-    - Service - Base64 to TA Document - used to convert Base64 into a TotalAgility Document (avoids needing to pass large blocks of Base64 data as variables in the agent process)	
-    - AgentWorktype - worktype for agent tracking
-    - MDCleaner.dll - a utility DLL to remove MD formatting from AI generated json & html
- - Custom service group: Agent Services	
-    - Custom service: Get Session - utility service to grab the user's session id for use when invoking tools (ensures tools are invoked with the same permissions and identity as the calling user)
- - TotalAgility Agent Documents	Extraction group - documents processed by agents are classified using this extraction group. Alls retention and knowledge base settings to be independently configured for agent documetns.
+## Package Contents
 
-**Note:** the examples only illustrate the patterns, and are not fully functioning agents. To give the agents power, create tools for them to use and include them in the registry variable (alternatives to using a static variable include a proxy service to provide tools, semantic intent routing using the knowledge base or using a Model Context Protocol server).
+### Agent Examples (Category: Agentic Design Pattern Examples)
 
-## Post Package Import:
-1. Navigate to: System data > Web service references
-2. Set the category to "Default Category"
-3. Edit the web service "TA Base URL" and replace {{your_host}} with the hostname for your TotalAgility environment: https://{{your_host}}/services/sdk/v1/
+| Agent | Purpose |
+|-------|---------|
+| **Example - Async Agent** | Template for async workflow invocation. ⚠️ Use automatic steps only; for human-in-the-loop, use a Case |
+| **Example - Sync Agent** | Template for synchronous agent calls |
+| **Example - Case Agent** | Template for launching long-running cases |
+| **Reflection - Report Formatting Agent** | Demonstrates the Reflection pattern with AI output improvement |
+| **Tool Use - Chat Agent** | Demonstrates the Tool-Use pattern with dynamic tool selection |
+| **Global Variable: Agent Tool Registry** | Central registry of available tools and worker agents for the Tool-Use agent |
 
-When you are ready, create new agents, workflows and cases using the "agent" IO signature described above, then update the details for these agents in the registry variable, so the Tool Use agent can pick tools to use on the fly.
+### Supporting Services (Category: Agent Services)
 
-## What's in the postman collection:
-Import this file into [Postman](https://www.postman.com/) to see examples REST calls to invoke the agents, with or without documents attached. 
+| Component | Function |
+|-----------|----------|
+| **Service - Analyse Document (Sync)** | Provides metadata about files to calling agents |
+| **Service - Base64 to TA Document** | Converts Base64 to TotalAgility Documents (avoids passing large data blocks as variables) |
+| **AgentWorktype** | Dedicated worktype for agent tracking and monitoring |
+| **MDCleaner.dll** | Utility to remove Markdown formatting from AI-generated JSON and HTML |
 
-Create an "environment" for this file to provide:
- - *host*: the host name (DNS) of your TotalAgility enviroment 
- - *SPP_SYSTEM_SESSION_ID*: the session ID of your TotalAgility enviroment 
- - *user_name*: the user name of the account that will invoke the services
+### Custom Services
 
-The web services can be used to call agents on TotalAgility, for example from [Microsoft Teams](https://github.com/TungstenAutomationLabs/TotalAgility-MSTeams-Agent)
+| Service | Purpose |
+|---------|---------|
+| **Get Session** | Retrieves the user's session ID for tool invocation, ensuring tools run with the same permissions as the agent caller |
+
+### Document Management
+
+- **TotalAgility Agent Documents Extraction Group** - Classifies documents processed by agents, allowing independent configuration of retention and knowledge base settings
+
+### ⚠️ Important Note
+
+These examples are **templates only** and are not fully functional agents. To make them operational:
+
+1. **Create custom tools** - Build domain-specific worker agents and services
+2. **Register tools** - Add them to the `Agent Tool Registry` variable
+3. **Alternative registry approaches**:
+   - Proxy service for dynamic tool provision
+   - Semantic intent routing using the knowledge base
+   - Model Context Protocol (MCP) server integration
+
+## Setup Instructions
+
+### Configure Web Service References
+
+After importing the package:
+
+1. Navigate to **System Data** > **Web Service References**
+2. Set the category to **"Default Category"**
+3. Edit the web service **"TA Base URL"** and replace `{{your_host}}` with your TotalAgility hostname:
+   ```
+   https://{{your_host}}/services/sdk/v1/
+   ```
+
+### Create Custom Agents and Tools
+
+Once configured, you can extend the framework:
+
+1. Create new agents, workflows, or cases using the **"agent" IO signature** defined in the package
+2. Update the **`Agent Tool Registry`** global variable with details of your new tools
+3. The Tool-Use agent will automatically discover and invoke them
+
+> **Tip**: You don't need to modify the agent step configuration—just update the registry and your tools become available!
+
+## Using the Postman Collection
+
+The `Agentic_Design_Patterns_For_TotalAgility.postman_collection.json` file contains example REST calls for invoking agents with and without document attachments.
+
+### Setup
+
+1. Import the collection into [Postman](https://www.postman.com/)
+2. Create an environment with the following variables:
+   - `host` - DNS hostname of your TotalAgility environment
+   - `SPP_SYSTEM_SESSION_ID` - Session ID (obtain from your TotalAgility environment)
+   - `user_name` - Username of the account invoking the agents
+
+### Integration
+
+These REST APIs enable agent invocation from external systems such as:
+- Microsoft Teams (see [TotalAgility-MSTeams-Agent](https://github.com/TungstenAutomationLabs/TotalAgility-MSTeams-Agent))
+- Custom integrations and workflows
+- Low-code platforms
 	
-## Where to learn more:
-[Additional content, demos and videos on  using Agents & RAG with TotalAgility](https://view-su2.highspot.com/viewer/3c5567ff29b0def9a15fd08eebb06230).
+## Next Steps
+
+1. **Review the examples** - Open each agent template and understand how it uses the IO signature
+2. **Examine the registry** - Look at `Agent Tool Registry` to see how tools are registered
+3. **Create a test tool** - Build a simple worker agent and register it
+4. **Test with Postman** - Use the collection to invoke agents and validate behavior
+5. **Build your domain tools** - Extend with custom agents tailored to your processes
+
+## Additional Resources
+
+- **[Agents & RAG with TotalAgility](https://view-su2.highspot.com/viewer/3c5567ff29b0def9a15fd08eebb06230)** - Demos, videos, and additional content
+- **[TotalAgility Example Agent](https://github.com/TungstenAutomationLabs/TotalAgilityExampleAgent)** - Fully implemented agentic loop example
+- **[TotalAgility-MSTeams-Agent](https://github.com/TungstenAutomationLabs/TotalAgility-MSTeams-Agent)** - Agent integration with Microsoft Teams
 
 
 
