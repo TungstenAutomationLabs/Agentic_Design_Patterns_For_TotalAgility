@@ -1,0 +1,168 @@
+{
+  "info": {
+    "_postman_id": "fb348ed4-da88-491a-add3-9b163307d563",
+    "name": "Agentic_Design_Patterns_For_TotalAgility",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "5352113",
+    "_collection_link": "https://go.postman.co/collection/5352113-fb348ed4-da88-491a-add3-9b163307d563?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Reflection - Report Formatting Agent",
+      "item": [
+        {
+          "name": "Reflection - Report Formatting Agent",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "accept": true
+            }
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "newSyncJob",
+                "value": "{  \"ProcessId\": \"3249AB2400FD6DC83BA2820ECAB268C1\",   \"ProcessName\": \"Sync Job API Test\",   \"JobInitialization\": {     \"InputVariables\": [       {         \"Id\": \"NAME\",         \"Value\": \"Tom\"       }     ]   }, \"VariablesToReturn\": [ { \"VarId\": \"GREETING\" }   ] }",
+                "type": "text",
+                "disabled": true
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{SessionID}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"ProcessId\": \"E9806803C20B43DBAB46F861CE63C451\",\r\n    \"ProcessName\": \"Reflection - Report Formatting Agent\",\r\n    \"JobInitialization\": {\r\n        \"InputVariables\": [\r\n            {\r\n                \"Id\": \"INPUT_PROMPT\",\r\n                \"Value\": \"# Oil Well Maintenance Assessment Report\\n\\n#### Prepared for:\\n**XYZ Oil Corporation**\\n\\n#### Prepared by:\\n**Tungsten Labs**\\n\\n#### Date:\\n**Monday, February 09, 2026**\\n\\n---\\n\\n## Executive Summary\\n\\nThis report provides an assessment of the current maintenance practices for the oil well **(Well ID: OW-2026-X)** located in **Region Alpha**. The analysis includes an evaluation of equipment conditions, maintenance schedules, and potential risks. Recommendations for improvements and a proposed timeline for maintenance optimization are also included.\\n\\n**Key Findings:**\\n- Critical equipment shows signs of wear and tear, with several components nearing operational limits.\\n- Maintenance schedules are inconsistent, leading to unnecessary downtime in the past quarter.\\n- Risk of environmental impact due to potential leaks is moderate but requires immediate attention.\\n\\n---\\n\\n## 1. Introduction\\n\\nThe purpose of this assessment is to evaluate the operational integrity of **Well OW-2026-X** and to recommend strategies to improve maintenance efficiency. The scope of the report includes:\\n1. Inspection of equipment and infrastructure.\\n2. Review of historical maintenance records.\\n3. Identification of risks and potential hazards.\\n4. Suggested improvements in processes and scheduling.\\n\\nThe assessment was conducted between **January 15, 2026**, and **January 30, 2026**, by a team of field engineers and maintenance experts.\\n\\n---\\n\\n## 2. Equipment Condition Analysis\\n\\n### 2.1 Drilling Equipment\\nThe **drilling unit** shows signs of degradation primarily due to exposure to extreme temperatures and aging materials. Key observations include:\\n- **Rotary table**: Moderate corrosion; lubrication system requires replacement.\\n- **Mud pumps**: Operating at reduced efficiency (75% capacity).\\n\\n**Recommendation:** Immediate servicing of mud pumps and routine lubrication checks for the rotary table.\\n\\n### 2.2 Wellhead\\nThe **wellhead assembly** was found to be intact but requires preventative maintenance to avoid future issues. Notable findings:\\n- Minor rust accumulation on the Christmas tree valves.\\n- Pressure gauges are calibrated but nearing calibration limits.\\n\\n**Recommendation:** Apply anti-corrosion coating and recalibrate pressure gauges within the next 30 days.\\n\\n### 2.3 Storage Tanks and Pipelines\\nThe **storage tanks** and connecting pipelines are largely in good condition. However, pipeline joints exhibit small cracks, which could lead to leaks under high pressure.\\n\\n**Recommendation:** Conduct ultrasonic testing on all pipeline joints and repair cracks immediately.\\n\\n---\\n\\n## 3. Maintenance Schedule Review\\n\\n### 3.1 Current Maintenance Practices\\nThe current maintenance schedule follows a **semi-annual plan**, which has proven insufficient. Key issues identified:\\n- Inconsistent adherence to the schedule due to staffing shortages.\\n- Lack of predictive maintenance measures.\\n\\n### 3.2 Downtime Analysis\\nOver the past quarter, the oil well experienced **15 hours of unplanned downtime**, primarily caused by equipment failures that could have been prevented with more proactive maintenance.\\n\\n---\\n\\n## 4. Risk Assessment\\n\\n### 4.1 Environmental Risks\\n- **Potential leaks** from identified cracks in pipelines could lead to moderate environmental damage if not addressed.\\n- **Spill containment** systems are functional but require additional testing.\\n\\n### 4.2 Operational Risks\\n- A failure in the mud pump system could result in significant downtime and reduced extraction efficiency.\\n- Current wellhead conditions pose a low operational risk but require monitoring.\\n\\n---\\n\\n## 5. Recommendations\\n\\n### 5.1 Short-Term Actions\\n1. **Repair pipeline joints**: Ultrasonic inspections and immediate repairs to prevent leaks.\\n2. **Service mud pumps**: Improve efficiency and avoid unexpected breakdowns.\\n3. **Apply anti-corrosion measures**: Protect wellhead components and valves.\\n\\n### 5.2 Long-Term Strategy\\n1. Transition to a **quarterly maintenance schedule** supported by predictive analytics.\\n2. Invest in staff training to ensure consistent adherence to maintenance protocols.\\n3. Conduct monthly environmental risk assessments to ensure compliance with regulations.\\n\\n---\\n\\n## 6. Proposed Timeline\\n\\n| **Action**                  | **Deadline**          | **Responsible Team**       |\\n|-----------------------------|-----------------------|----------------------------|\\n| Repair pipeline joints      | February 20, 2026     | Pipeline Maintenance Team  |\\n| Recalibrate pressure gauges | February 15, 2026     | Wellhead Team              |\\n| Apply anti-corrosion coating| February 25, 2026     | Surface Equipment Team     |\\n| Implement quarterly schedule| March 1, 2026         | Maintenance Oversight Team |\\n\\n---\\n\\n## 7. Conclusion\\n\\nThe assessment of **Well OW-2026-X** highlights the need for immediate and proactive maintenance measures to ensure operational efficiency and minimize risks. By addressing the short-term actions and implementing a revised long-term strategy, **XYZ Oil Corporation** can significantly reduce downtime and extend the lifespan of critical equipment.\\n\\n---\"\r\n            },\r\n            {\r\n                \"Id\": \"TEMPERATURE\",\r\n                \"Value\": 1\r\n            },\r\n            {\r\n                \"Id\": \"USE_SEED\",\r\n                \"Value\": true\r\n            },\r\n            {\r\n                \"Id\": \"SEED\",\r\n                \"Value\": 27535\r\n            },\r\n            {\r\n                \"Id\": \"DOCUMENT_TYPE\",\r\n                \"Value\": \"\"\r\n            },\r\n            {\r\n                \"Id\": \"DOCUMENT_CONTENT\",\r\n                \"Value\": \"\"\r\n            }\r\n        ]\r\n    },\r\n    \"Documents\": [\r\n        {\r\n            \"MimeType\": \"\",\r\n            \"RuntimeFields\": [],\r\n            \"FolderId\": \"\",\r\n            \"DocumentTypeId\": \"\",\r\n            \"FolderTypeId\": \"\",\r\n            \"Base64Data\": \"\",\r\n            \"DocumentTypeName\": \"\",\r\n            \"DocumentGroupId\": \"\",\r\n            \"DocumentGroupName\": \"\"\r\n        }\r\n    ],\r\n    \"VariablesToReturn\": [\r\n        {\r\n            \"VarId\": \"OUTPUT\"\r\n        }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://{{host}}/services/sdk/v1/jobs/progress",
+              "protocol": "https",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "services",
+                "sdk",
+                "v1",
+                "jobs",
+                "progress"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User SSO",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = pm.response.json();\r",
+              "pm.collectionVariables.set(\"SessionID\", jsonData.SessionId);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"UserId\": \"{{user_name}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://{{host}}/services/sdk/v1/users/sessions/single-sign-on",
+          "protocol": "https",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "services",
+            "sdk",
+            "v1",
+            "users",
+            "sessions",
+            "single-sign-on"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "value",
+        "value": "{{SPP_SYSTEM_SESSION_ID}}",
+        "type": "string"
+      },
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "SessionID",
+      "value": ""
+    }
+  ]
+}
