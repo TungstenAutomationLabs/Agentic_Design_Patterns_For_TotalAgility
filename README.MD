@@ -15,7 +15,7 @@ Also see:
  - [TotalAgility Example Agent using an Agentic Loop](https://github.com/TungstenAutomationLabs/TotalAgilityExampleAgent ) 
 
 ## Approach:
-Key to the Tool Use pattern is agents, workflows or cases that are called by the agent have the same "agent" signature. This makes them universally pluggable, so the agent can invoke any worker agent or tool without needing a specific step. If structured data (e.g. json) is needed, this can be passed in using the "INPUT_PROMPT", simply describe the expected input format in the registry and the agent will do the rest.
+Key to the Tool Use pattern is agents, workflows or cases that are called by the agent have the same "agent" signature. This makes them universally pluggable, so the agent can invoke any worker agent or tool without needing a specific step or configuration. If teh agent needs structured data (e.g. json), this can be passed in using the "INPUT_PROMPT", simply describe the expected input format in the registry and the agent will do the rest.
 ![Agent IO Signature](./images/Agent_IO_Signature.png)
 
 ## What's in the Package:
@@ -42,6 +42,8 @@ The TotalAgility package contains:
 1. Navigate to: System data > Web service references
 2. Set the category to "Default Category"
 3. Edit the web service "TA Base URL" and replace {{your_host}} with the hostname for your TotalAgility environment: https://{{your_host}}/services/sdk/v1/
+
+When you are ready, create new agents, workflows and cases using the "agent" IO signature described above, then update the details for these agents in the registry variable, so the Tool Use agent can pick tools to use on the fly.
 
 ## What's in the postman collection:
 Import this file into [Postman](https://www.postman.com/) to see examples REST calls to invoke the agents, with or without documents attached. 
