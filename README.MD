@@ -29,10 +29,10 @@ Sample packages demonstrating agentic design patterns using Tungsten TotalAgilit
 ![Tool Use Pattern](images/ToolUsePattern.png)
 
 ### Available by Request
-- **[The Planning Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-planning-pattern)** - Plan-Act shows strategic planning and decomposition of complex tasks
+- **[The Planning Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-planning-pattern)** - Plan‑Act shows strategic planning and decomposition of complex tasks
 ![Plan Act Pattern](images/PlanActPattern.png)
 
-- **[The Multi-Agent Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-multi-agent-pattern)** - Plan-Act-Reflect-Repeat shows orchestrating multiple agents working together, open ended task completion & case management 
+- **[The Multi-Agent Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-multi-agent-pattern)** - Plan‑Act‑Reflect‑Repeat shows orchestrating multiple agents working together, open-ended task completion & case management 
 ![Plan Act Reflect Repeat Pattern](images/PlanActReflectRepeatPattern.png)
 
 
@@ -73,12 +73,13 @@ The result is an agent that adapts to available tools without modifications, ena
 ![Agent IO Signature](./images/Agent_IO_Signature.png)
 
 ### Registry Variable Data Model Format
-Which worker agents and tools are available for an agent to use, is controled by a registry. The format is defined as a data model, which is used in the prompts & output of planing activities. In the Tool Use Pattern example, the registry data is stored as a global variable. 
-In scenarios where the agent has access to a large number of tools, as an alternative use using a variable, condir:
+Which worker agents and tools are available for an agent to use is controlled by a registry. The format is defined as a data model, which is used in the prompts and output of planning activities. In the Tool‑Use pattern example, the registry data is stored as a global variable.
+
+In scenarios where there are a large number of tools, or where availability of tools is determined dynamically, alternatives to a static variable include:
  - semantic tool lookup from the knowledge base (requires TotalAgility Enterprise)
-- a custom service wrapping dynamic or hierarchical tool lookup
-- a variable that can be dynamically applied as skin to a manang agent
-- using MCP (Model Context Protocol)
+ - a custom service wrapping dynamic or hierarchical tool lookup
+ - a variable that can be dynamically applied as a skin to a managing agent, for example based on the user’s department
+ - using MCP (Model Context Protocol)
 
 For an example of the tool registry data model, see: `registry/Agent Tool Registry.json`. Each tool entry includes:
 
