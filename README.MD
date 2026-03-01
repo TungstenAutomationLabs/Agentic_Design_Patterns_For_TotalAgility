@@ -19,20 +19,20 @@ Sample packages demonstrating agentic design patterns using Tungsten TotalAgilit
 - [Next Steps](#next-steps)
 - [Additional Resources](#additional-resources)
 
-## Included Patterns
+## Included Agentic Patterns
 
 ### Included in This Package
-- **[The Agentic AI Reflection Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-reflection-pattern)** - Demonstrates AI agents that analyze and improve their own outputs
+- **[The Reflection Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-reflection-pattern)** - Demonstrates AI agents that analyze and improve their own outputs
 ![Reflection Pattern](images/ReflectionPattern.png)
 
-- **[The Agentic AI Tool-Use Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-tool-use-pattern)** - Shows how agents dynamically select and invoke tools
+- **[The Tool-Use Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-tool-use-pattern)** - Shows how agents dynamically select and invoke tools
 ![Tool Use Pattern](images/ToolUsePattern.png)
 
 ### Available by Request
-- **[The AI Planning Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-planning-pattern)** - Plan-Act shows strategic planning and decomposition of complex tasks
+- **[The Planning Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-planning-pattern)** - Plan-Act shows strategic planning and decomposition of complex tasks
 ![Plan Act Pattern](images/PlanActPattern.png)
 
-- **[The Agentic AI Multi-Agent Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-multi-agent-pattern)** - Plan-Act-Reflect-Repeat shows orchestrating multiple agents working together & open ended task completion
+- **[The Multi-Agent Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-multi-agent-pattern)** - Plan-Act-Reflect-Repeat shows orchestrating multiple agents working together, open ended task completion & case management 
 ![Plan Act Reflect Repeat Pattern](images/PlanActReflectRepeatPattern.png)
 
 
@@ -72,52 +72,15 @@ The result is an agent that adapts to available tools without modifications, ena
 
 ![Agent IO Signature](./images/Agent_IO_Signature.png)
 
-## Package Contents
+### Registry Variable Data Model Format
+Which worker agents and tools are available for an agent to use, is controled by a registry. The format is defined as a data model, which is used in the prompts & output of planing activities. In the Tool Use Pattern example, the registry data is stored as a global variable. 
+In scenarios where the agent has access to a large number of tools, as an alternative use using a variable, condir:
+ - semantic tool lookup from the knowledge base (requires TotalAgility Enterprise)
+- a custom service wrapping dynamic or hierarchical tool lookup
+- a variable that can be dynamically applied as skin to a manang agent
+- using MCP (Model Context Protocol)
 
-### Agent Examples (Category: Agentic Design Pattern Examples)
-
-| Agent | Purpose |
-|-------|---------|
-| **Example - Async Agent** | Template for async workflow invocation. ⚠️ Use automatic steps only; for human-in-the-loop, use a Case |
-| **Example - Sync Agent** | Template for synchronous agent calls |
-| **Example - Case Agent** | Template for launching long-running cases, including those with human-in-the-loop activities |
-| **Reflection - Report Formatting Agent** | Demonstrates the Reflection pattern with AI output improvement |
-| **Tool Use - Chat Agent** | Demonstrates the Tool-Use pattern with dynamic tool selection |
-| **Global Variable: Agent Tool Registry** | Contains the ```Agent Tool Registry.json``` providing a registry of available tools and worker agents for the Tool-Use agent |
-
-### Supporting Services (Category: Agent Services)
-
-| Component | Function |
-|-----------|----------|
-| **Service - Analyse Document (Sync)** | Provides metadata about files to calling agents |
-| **Service - Base64 to TA Document** | Converts Base64 to TotalAgility Documents (avoids passing large data blocks as variables) |
-| **AgentWorktype** | Example worktype for agent tracking and monitoring |
-| **MDCleaner.dll** | Utility to remove Markdown formatting from AI-generated JSON and HTML |
-
-### Custom Services
-
-| Service | Purpose |
-|---------|---------|
-| **Get Session** | Retrieves the user's session ID for tool invocation, ensuring tools run with the same permissions as the agent caller |
-
-### Document Management
-
-- **TotalAgility Agent Documents Extraction Group** - Classifies documents processed by agents, allowing independent configuration of retention and knowledge base settings
-
-### ⚠️ Important Note
-
-These examples are **templates only** and are not fully functional agents. To make them operational:
-
-1. **Create custom tools** - Build domain-specific worker agents and services
-2. **Register tools** - Add them to the `Agent Tool Registry` variable
-3. **Alternative registry approaches**:
-   - Proxy service for dynamic tool provision
-   - Semantic intent routing using the knowledge base
-   - Model Context Protocol (MCP) server integration
-
-### Registry Entry Format
-
-The registry of tools and worker agents available to an agent, which in this example is stored as a global variable (alternatively use semantic tool lookup from the knowledge base or MCP). For an example of the tool registry data model, see: `registry/Agent Tool Registry.json`. Each tool entry includes:
+For an example of the tool registry data model, see: `registry/Agent Tool Registry.json`. Each tool entry includes:
 
 - `intent` (string) – the type of tool to be called (e.g. `sync_agent`, `direct_reply`)
 - `processID` (string) – the TotalAgility process GUID or "NA" for inline handlers
@@ -161,6 +124,49 @@ The registry of tools and worker agents available to an agent, which in this exa
 
 > **Note:** Keeping `intent` and `processID` accurate is critical; mismatches cause tool lookups to fail at runtime.
 
+
+## Package Contents
+
+### Agent Examples (Category: Agentic Design Pattern Examples)
+
+| Agent | Purpose |
+|-------|---------|
+| **Example - Async Agent** | Template for async workflow invocation. ⚠️ Use automatic steps only; for human-in-the-loop, use a Case |
+| **Example - Sync Agent** | Template for synchronous agent calls |
+| **Example - Case Agent** | Template for launching long-running cases, including those with human-in-the-loop activities |
+| **Reflection - Report Formatting Agent** | Demonstrates the Reflection pattern with AI output improvement |
+| **Tool Use - Chat Agent** | Demonstrates the Tool-Use pattern with dynamic tool selection |
+| **Global Variable: Agent Tool Registry** | Contains the ```Agent Tool Registry.json``` providing a registry of available tools and worker agents for the Tool-Use agent |
+
+### Supporting Services (Category: Agent Services)
+
+| Component | Function |
+|-----------|----------|
+| **Service - Analyse Document (Sync)** | Provides metadata about files to calling agents |
+| **Service - Base64 to TA Document** | Converts Base64 to TotalAgility Documents (avoids passing large data blocks as variables) |
+| **AgentWorktype** | Example worktype for agent tracking and monitoring |
+| **MDCleaner.dll** | Utility to remove Markdown formatting from AI-generated JSON and HTML |
+
+### Custom Services
+
+| Service | Purpose |
+|---------|---------|
+| **Get Session** | Retrieves the user's session ID for tool invocation, ensuring tools run with the same permissions as the agent caller |
+
+### Document Management
+
+- **TotalAgility Agent Documents Extraction Group** - Classifies documents processed by agents, allowing independent configuration of retention and knowledge base settings
+
+### ⚠️ Important Note
+
+These examples are **templates only** and are not fully functional agents. To make them operational:
+
+1. **Create custom tools** - Build domain-specific worker agents and services
+2. **Register tools** - Add them to the `Agent Tool Registry` variable
+3. **Alternative registry approaches**:
+   - Proxy service for dynamic tool provision
+   - Semantic intent routing using the knowledge base
+   - Model Context Protocol (MCP) server integration
 
 
 ## Repository Structure
