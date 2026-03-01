@@ -27,10 +27,10 @@ Sample packages demonstrating agentic design patterns using Tungsten TotalAgilit
 ![Tool Use Pattern](images/ToolUsePattern.png)
 
 ### Available by Request
-- **[The AI Planning Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-planning-pattern)** - Strategic planning and decomposition of complex tasks
+- **[The AI Planning Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-planning-pattern)** - Plan-Act shows strategic planning and decomposition of complex tasks
 ![Plan Act Pattern](images/PlanActPattern.png)
 
-- **[The Agentic AI Multi-Agent Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-multi-agent-pattern)** - Orchestrating multiple agents working together & open ended task completion
+- **[The Agentic AI Multi-Agent Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-multi-agent-pattern)** - Plan-Act-Reflect-Repeat shows orchestrating multiple agents working together & open ended task completion
 ![Plan Act Reflect Repeat Pattern](images/PlanActReflectRepeatPattern.png)
 
 
