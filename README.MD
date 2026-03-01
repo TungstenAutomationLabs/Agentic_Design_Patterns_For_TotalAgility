@@ -120,7 +120,7 @@ For an example of the tool registry data model, see: `registry/Agent Tool Regist
 
 1. Open `registry/Agent Tool Registry.json` in a text editor.
 2. Add, remove or update objects in the `agent_processes` array.
-3. Save the file and ensure your TotalAgility environment picks up the changes (re‑import the global variable if necessary).
+3. Save the file and in your TotalAgility enviroment copy the json data into the `Agent Tool Registry` global variable.
 4. Match the `intent` values with those your main agent uses when selecting tools.
 
 > **Note:** Keeping `intent` and `processID` accurate is critical; mismatches cause tool lookups to fail at runtime.
