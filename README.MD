@@ -36,7 +36,8 @@ Sample packages demonstrating agentic design patterns using Tungsten TotalAgilit
 
 ### Related Projects
 
-- **[TotalAgility Example Agent using an Agentic Loop](https://github.com/TungstenAutomationLabs/TotalAgilityExampleAgent)** - Full-featured agent implementation example
+- **[TotalAgility Example Agent using an Agentic Loop](https://github.com/TungstenAutomationLabs/TotalAgilityExampleAgent)** - Full-featured managing agent implementation example, calling worker agents in a agentic-loop for goal completion
+![Plan Act Reflect Repeat Pattern](images/Example Managing Agent Pattern.png)
 
 
 
