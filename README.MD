@@ -20,18 +20,27 @@ Sample packages demonstrating agentic design patterns using Tungsten TotalAgilit
 ## Included Patterns
 
 ### Included in This Package
-
 - **[The Agentic AI Reflection Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-reflection-pattern)** - Demonstrates AI agents that analyze and improve their own outputs
+![Reflection Pattern](images/ReflectionPattern.png)
+
 - **[The Agentic AI Tool-Use Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-tool-use-pattern)** - Shows how agents dynamically select and invoke tools
+![Tool Use Pattern](images/ToolUsePattern.png)
 
 ### Available by Request
-
-- **[The Agentic AI Multi-Agent Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-multi-agent-pattern)** - Orchestrating multiple agents working together
 - **[The AI Planning Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-planning-pattern)** - Strategic planning and decomposition of complex tasks
+![Plan Act Pattern](images/PlanActPattern.png)
+
+- **[The Agentic AI Multi-Agent Pattern](https://www.tungstenautomation.com/learn/blog/the-agentic-ai-multi-agent-pattern)** - Orchestrating multiple agents working together & open ended task completion
+![Plan Act Reflect Repeat Pattern](images/PlanActReflectRepeatPattern.png)
+
 
 ### Related Projects
 
 - **[TotalAgility Example Agent using an Agentic Loop](https://github.com/TungstenAutomationLabs/TotalAgilityExampleAgent)** - Full-featured agent implementation example
+
+
+
+
 
 ## Prerequisites
 
@@ -71,7 +80,7 @@ The result is an agent that adapts to available tools without modifications, ena
 | **Example - Case Agent** | Template for launching long-running cases |
 | **Reflection - Report Formatting Agent** | Demonstrates the Reflection pattern with AI output improvement |
 | **Tool Use - Chat Agent** | Demonstrates the Tool-Use pattern with dynamic tool selection |
-| **Global Variable: Agent Tool Registry** | Central registry of available tools and worker agents for the Tool-Use agent |
+| **Global Variable: Agent Tool Registry** | Contains the ```Agent Tool Registry.json``` providing a registry of available tools and worker agents for the Tool-Use agent |
 
 ### Supporting Services (Category: Agent Services)
 
@@ -79,7 +88,7 @@ The result is an agent that adapts to available tools without modifications, ena
 |-----------|----------|
 | **Service - Analyse Document (Sync)** | Provides metadata about files to calling agents |
 | **Service - Base64 to TA Document** | Converts Base64 to TotalAgility Documents (avoids passing large data blocks as variables) |
-| **AgentWorktype** | Dedicated worktype for agent tracking and monitoring |
+| **AgentWorktype** | Example worktype for agent tracking and monitoring |
 | **MDCleaner.dll** | Utility to remove Markdown formatting from AI-generated JSON and HTML |
 
 ### Custom Services
@@ -102,6 +111,54 @@ These examples are **templates only** and are not fully functional agents. To ma
    - Proxy service for dynamic tool provision
    - Semantic intent routing using the knowledge base
    - Model Context Protocol (MCP) server integration
+
+### Registry Entry Format
+
+The registry of tools and worker agents available to an agent, which in this example is stored as a global variable (alternatively use semantic tool lookup from the knowledge base or MCP). For an example of the tool registry data model, see: `registry/Agent Tool Registry.json`. Each tool entry includes:
+
+- `intent` (string) – the type of tool to be called (e.g. `sync_agent`, `direct_reply`)
+- `processID` (string) – the TotalAgility process GUID or "NA" for inline handlers
+- `version` (number) – version of the agent/process definition
+- `name` (string) – human‑readable name shown in logs and UIs
+- `max_invocations_per_cycle` (string/number) – throttle count for the tool per cycle
+- `description` (string) – explanation of what the agent does & any instructions on how to call the agent 
+
+#### Actual Example from the Repository
+
+```json
+{
+  "agent_processes": [
+    {
+      "intent": "direct_reply",
+      "processID": "NA",
+      "version": 1.0,
+      "name": "Direct Reply",
+      "max_invocations_per_cycle": "1",
+      "description": "Responds directly back to the user with the provided prompt, without any additional actions by agents."
+    },
+    {
+      "intent": "sync_agent",
+      "processID": "6B8642DEC8B24FF1925FAE0CA0BAE778",
+      "version": 1.0,
+      "name": "Example - Sync Agent",
+      "max_invocations_per_cycle": "1",
+      "description": "Example agent to test calling a synchronous worker agent. Include details of any expected data or formatting requirements here, inc. an example of use."
+    }
+    // more entries follow...
+  ]
+}
+```
+
+#### Editing the Registry
+
+1. Open `registry/Agent Tool Registry.json` in a text editor.
+2. Add, remove or update objects in the `agent_processes` array.
+3. Save the file and ensure your TotalAgility environment picks up the changes (re‑import the global variable if necessary).
+4. Match the `intent` values with those your main agent uses when selecting tools.
+
+> **Note:** Keeping `intent` and `processID` accurate is critical; mismatches cause tool lookups to fail at runtime.
+
+
 
 ## Repository Structure
 
