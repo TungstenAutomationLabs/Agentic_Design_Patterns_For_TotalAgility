@@ -78,7 +78,7 @@ The result is an agent that adapts to available tools without modifications, ena
 |-------|---------|
 | **Example - Async Agent** | Template for async workflow invocation. ⚠️ Use automatic steps only; for human-in-the-loop, use a Case |
 | **Example - Sync Agent** | Template for synchronous agent calls |
-| **Example - Case Agent** | Template for launching long-running cases |
+| **Example - Case Agent** | Template for launching long-running cases, including those with human-in-the-loop activities |
 | **Reflection - Report Formatting Agent** | Demonstrates the Reflection pattern with AI output improvement |
 | **Tool Use - Chat Agent** | Demonstrates the Tool-Use pattern with dynamic tool selection |
 | **Global Variable: Agent Tool Registry** | Contains the ```Agent Tool Registry.json``` providing a registry of available tools and worker agents for the Tool-Use agent |
