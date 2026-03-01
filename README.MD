@@ -4,6 +4,8 @@ Sample packages demonstrating agentic design patterns using Tungsten TotalAgilit
 
 > **Learn More**: See [How to Build Enterprise Grade AI Agents with Agentic Design Patterns](https://www.tungstenautomation.com/learn/blog/build-enterprise-grade-ai-agents-agentic-design-patterns)
 
+> **Watch the Webinar**: On demand [How to Build AI Agents with Agentic Design Patterns](https://www.tungstenautomation.com/learn/webinars/how-to-build-ai-agents-with-agentic-design-patterns)
+
 ## Table of Contents
 
 - [Included Patterns](#included-patterns)
