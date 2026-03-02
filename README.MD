@@ -114,7 +114,7 @@ For an example of the tool registry data model, see: `registry/Agent Tool Regist
 
 1. Open `registry/Agent Tool Registry.json` in a text editor.
 2. Add, remove or update objects in the `agent_processes` array.
-3. Save the file and in your TotalAgility enviroment copy the json data into the `Agent Tool Registry` global variable.
+3. Save the file and in your TotalAgility environment copy the json data into the `Agent Tool Registry` global variable.
 4. Match the `intent` values with those your main agent uses when selecting tools.
 
 > **Note:** Keeping `intent` and `processID` accurate is critical; mismatches cause tool lookups to fail at runtime.
@@ -230,7 +230,7 @@ Once configured, you can extend the framework:
  - [Football score API](https://www.api-football.com/)
  - [Tungsten RPA, included with TotalAgility Enterprise, for web browser use](https://www.tungstenautomation.com/products/rpa) 
 
- > **Tip**: In the Tool Use Pattern a single tool is evoked in each round of a turn based conversations. Enable [Persist conversation](https://docshield.tungstenautomation.com//TotalAgility/en_US/2026.1-sy4i5uG9Tu/help/Designer/All_Shared/UserInterface/t_controlgenaiconfig.html?h=Persist%20conversation) in your Chat Control to share data from Tool Use in one round with subsequent tool calls in a later round.
+ > **Tip**: In the Tool Use Pattern a single tool is invoked in each round of a turn based conversations. Enable [Persist conversation](https://docshield.tungstenautomation.com//TotalAgility/en_US/2026.1-sy4i5uG9Tu/help/Designer/All_Shared/UserInterface/t_controlgenaiconfig.html?h=Persist%20conversation) in your Chat Control to share data from Tool Use in one round with subsequent tool calls in a later round.
 
  > **Tip**: Use the Plan-Act or Plan-Act-Reflect-Repeat patterns to maintain state, data and context across multiple rounds of tool use in an autonomous agent (i.e. an agent operating outside a conversation context, without real-time human oversight and collaboration).
 
@@ -246,12 +246,12 @@ The `Agentic_Design_Patterns_For_TotalAgility.postman_collection.json` file cont
    - `SPP_SYSTEM_SESSION_ID` - Session ID (obtain from your TotalAgility environment)
    - `user_name` - Username of the account invoking the agents
 
-The postman collection includes examples API calls to:
+The postman collection includes example API calls to:
  - Get a Single Sign On session ID for a user
  - Call the Reflection Pattern
  - 3 illustrations of how to call the Tool Use Pattern:
     - Without a document attached
-    - With a document, by pre-creating a TotalAgility Document, then referncing this document when calling a Tool Use Pattern agent (this is the recommended approach to passing documents to an agent)
+    - With a document, by pre-creating a TotalAgility Document, then referencing this document when calling a Tool Use Pattern agent (this is the recommended approach to passing documents to an agent)
     - With a document directly passed to the agent as base64 data (this results in more data being stored as variables in the TotalAgility database, hence it is recommended to pre-create the document as per the above)
 
 ### Integration
