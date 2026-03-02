@@ -75,12 +75,6 @@ The result is an agent that adapts to available tools without modifications, ena
 ### Registry Variable Data Model Format
 Which worker agents and tools are available for an agent to use is controlled by a registry. The format is defined as a data model, which is used in the prompts and output of planning activities. In the Tool‑Use pattern example, the registry data is stored as a global variable.
 
-In scenarios where there are a large number of tools, or where availability of tools is determined dynamically, alternatives to a static variable include:
- - semantic tool lookup from the knowledge base (requires TotalAgility Enterprise)
- - a custom service wrapping dynamic or hierarchical tool lookup
- - a variable that can be dynamically applied as a skin to a managing agent, for example based on the user’s department
- - using MCP (Model Context Protocol)
-
 For an example of the tool registry data model, see: `registry/Agent Tool Registry.json`. Each tool entry includes:
 
 - `intent` (string) – the type of tool to be called (e.g. `sync_agent`, `direct_reply`)
@@ -125,6 +119,12 @@ For an example of the tool registry data model, see: `registry/Agent Tool Regist
 
 > **Note:** Keeping `intent` and `processID` accurate is critical; mismatches cause tool lookups to fail at runtime.
 
+### Scaling & Governing Access to Larger Numbers of Tools & Worker Agents
+In scenarios where there are a large number of tools, or where availability of tools is determined dynamically, alternatives to using a static variable for the tool registry include:
+ - semantic tool lookup from the knowledge base (requires TotalAgility Enterprise)
+ - a custom service wrapping dynamic, rule based or hierarchical tool lookup
+ - a variable that can be dynamically updated when a `skin` is applied to a managing or case agent, for example based on the user’s department the agent could take on a HR or engineering `skin`
+ - using MCP (Model Context Protocol)
 
 ## Package Contents
 
