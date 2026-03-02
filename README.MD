@@ -222,7 +222,7 @@ Once configured, you can extend the framework:
 
 > **Tip**: You don't need to modify the agent step configuration—just update the registry and your tools become available!
 
-> **Tip**: Try adding tools to look up real time data, and configure these for use in the Tool Use Pattern
+> **Tip**: Try adding tools to look up real time data, and configure these for use in the Tool Use Pattern.
 
 #### Example APIs to Test (free or trial account available)
  - [Web search API](https://home.you.com/web-search-api)
@@ -230,9 +230,9 @@ Once configured, you can extend the framework:
  - [Football score API](https://www.api-football.com/)
  - [Add web browser use with Tungsten RPA, included with TotalAgility Enterprise](https://www.tungstenautomation.com/products/rpa) 
 
- > **Tip**: In the Tool Use Pattern a single tool is evoked in each round of a turn based conversations. Enable [Persist conversation](https://docshield.tungstenautomation.com//TotalAgility/en_US/2026.1-sy4i5uG9Tu/help/Designer/All_Shared/UserInterface/t_controlgenaiconfig.html?h=Persist%20conversation) in your Chat Control to share data from Tool Use in one round with subsequent tool calls in a later round
+ > **Tip**: In the Tool Use Pattern a single tool is evoked in each round of a turn based conversations. Enable [Persist conversation](https://docshield.tungstenautomation.com//TotalAgility/en_US/2026.1-sy4i5uG9Tu/help/Designer/All_Shared/UserInterface/t_controlgenaiconfig.html?h=Persist%20conversation) in your Chat Control to share data from Tool Use in one round with subsequent tool calls in a later round.
 
- > **Tip**: Use the Plan-Act or Plan-Act-Reflect-Repeat patterns to maintain state, data and context across multiple rounds of tool use in an autonomous agent (i.e. an agent operating outside a conversation context, without real-time human oversight and collaboration)
+ > **Tip**: Use the Plan-Act or Plan-Act-Reflect-Repeat patterns to maintain state, data and context across multiple rounds of tool use in an autonomous agent (i.e. an agent operating outside a conversation context, without real-time human oversight and collaboration).
 
 ## Using the Postman Collection
 
