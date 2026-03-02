@@ -246,6 +246,14 @@ The `Agentic_Design_Patterns_For_TotalAgility.postman_collection.json` file cont
    - `SPP_SYSTEM_SESSION_ID` - Session ID (obtain from your TotalAgility environment)
    - `user_name` - Username of the account invoking the agents
 
+The postman collection includes examples API calls to:
+ - Get a Single Sign On session ID for a user
+ - Call the Reflection Pattern
+ - 3 illustrations of how to call the Tool Use Pattern:
+    - Without a document attached
+    - With a document, by pre-creating a TotalAgility Document, then referncing this document when calling a Tool Use Pattern agent (this is the recommended approach to passing documents to an agent)
+    - With a document directly passed to the agent as base64 data (this results in more data being stored as variables in the TotalAgility database, hence it is recommended to pre-create the document as per the above)
+
 ### Integration
 
 These REST APIs enable agent invocation from external systems such as:
