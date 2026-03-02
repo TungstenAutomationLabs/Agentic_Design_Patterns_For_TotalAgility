@@ -224,11 +224,11 @@ Once configured, you can extend the framework:
 
 > **Tip**: Try adding tools to look up real time data, and configure these for use in the Tool Use Pattern.
 
-#### Example APIs to Test (free or trial account available)
+#### Example APIs to Test (free API keys or trial accounts available)
  - [Web search API](https://home.you.com/web-search-api)
  - [Stock price API](https://www.alphavantage.co/)
  - [Football score API](https://www.api-football.com/)
- - [Add web browser use with Tungsten RPA, included with TotalAgility Enterprise](https://www.tungstenautomation.com/products/rpa) 
+ - [Tungsten RPA, included with TotalAgility Enterprise, for web browser use](https://www.tungstenautomation.com/products/rpa) 
 
  > **Tip**: In the Tool Use Pattern a single tool is evoked in each round of a turn based conversations. Enable [Persist conversation](https://docshield.tungstenautomation.com//TotalAgility/en_US/2026.1-sy4i5uG9Tu/help/Designer/All_Shared/UserInterface/t_controlgenaiconfig.html?h=Persist%20conversation) in your Chat Control to share data from Tool Use in one round with subsequent tool calls in a later round.
 
