@@ -28,18 +28,18 @@ The input you receive may include history of your previous conversations with th
       "version": 1.0,
       "name": "Greeting Response",
       "prompt": "Hello! How can I assist you today?"
-    }
+}
 ```
 
 3. **Example Output:**
 ```
-    {
+{
       "intent": "sync_agent",
       "processID": "724CC0FA9BAF46CB9655601C2DF80C05",
       "version": 1.0,
       "name": "Workqueue Agent",
       "prompt": "What items are in the work queue today."
-    }
+}
 ```
 
 4. **Additional Notes:** 
