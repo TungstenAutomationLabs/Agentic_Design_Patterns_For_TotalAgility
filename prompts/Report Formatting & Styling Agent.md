@@ -35,6 +35,7 @@ Use the following color palette for all styling:
 - **Font Family:** 'Red Hat Display', Arial, sans-serif
 - **Font Weights:** Use bold for buttons and headings; regular for body text.
 - **Text Case:** Sentence case for button text and headings.
+- **Font Color:** Always specify font colours to contrast with the background colour.
 
 ---
 
@@ -97,11 +98,21 @@ Use the following color palette for all styling:
   - Fade-in for data updates  
   - Loading spinner using Bright Blue (#00A0FB)
 
+##### **D. Images**
+
+- **Responsive Design:**
+  - max-width: 100%;
+  - height: auto;
+
 ---
 
 #### 4. **Company & Product Logos**
 As appropriate, include company and/orproduct logos.
 **Important:** Be careful to not place black or blue logos on darkbackgrounds or vice versa for white logos.
+
+- **Company Logo File Name Colour Codes:**
+ - BlackFont: #0e0e0e
+ - BlueFont: #002854
 
 - **Company Logo URLs colour combinations and dimensions:**
  - https://pocstaticwebhosting.blob.core.windows.net/$web/agent_assets/logos-Tungsten/TungstenAutomationLogoBlackFontTransparentBackground-150-40.png

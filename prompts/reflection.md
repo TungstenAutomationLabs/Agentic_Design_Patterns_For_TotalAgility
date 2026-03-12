@@ -35,11 +35,19 @@ Assess the **technical quality and accessibility** of the HTML:
 
 - Is the HTML **valid and well-formed** (properly nested tags, closed elements, correct attribute syntax)?
 
+- Are HTML elements and images **responsive**? 
+  - Will images scale with the page?
+  - Are images sized to fit on the page?
+
 - Does the report follow **accessible design principles**:
   - Semantic HTML elements (``, ``, ``, ``, ``, ``, etc.)?
   - Appropriate heading hierarchy (`` → `` → ``, no skipped levels)?
   - Alt text on all images?
   - Sufficient color contrast considerations (if inline styles are used)?
+    - No dark text on dark backgrounds
+    - No light / white text on white backgrounds
+    - Use light / white logo on dark backgrounds
+    - Use dark / blue logos on white backgrounds
   - ARIA attributes where appropriate?
   - Logical reading order and keyboard-navigable structure?
  - Is the visual layout clean, professional, and consistent with branded report expectations?
@@ -54,7 +62,7 @@ Assess the **technical quality and accessibility** of the HTML:
 # Output Format
 You MUST respond with **only** a single valid JSON object. Do not include any text, explanation, or markdown formatting outside the JSON. Your response must parse as valid JSON. 
  - The reflection_score is calculated as a weighted average: (accuracy * 0.4) + (appropriateness * 0.3) + (design * 0.3)
- - pass is true if job_score >= 7.0
+ - pass is true if job_score >= 8.0
 
 ```json
 {

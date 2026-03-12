@@ -48,6 +48,7 @@ Sample packages demonstrating agentic design patterns using Tungsten TotalAgilit
 ## Prerequisites
 
 - Tungsten TotalAgility 2026.1 or higher
+  - User accounts **must** include an email address for the session remapping 
 - Access to the TotalAgility platform with administrative or developer privileges
 - [Postman](https://www.postman.com/) (optional, for testing REST endpoints)
 - Basic familiarity with TotalAgility workflows, cases, and services
@@ -138,6 +139,11 @@ In scenarios where there are a large number of tools, or where availability of t
 | **Reflection - Report Formatting Agent** | Demonstrates the Reflection pattern with AI output improvement |
 | **Tool Use - Chat Agent** | Demonstrates the Tool-Use pattern with dynamic tool selection |
 | **Global Variable: Agent Tool Registry** | Contains the ```Agent Tool Registry.json``` providing a registry of available tools and worker agents for the Tool-Use agent |
+
+### Forms
+| Form | Purpose |
+|-------|---------|
+| **Reflection - Report Formatting Agent form** | Illustrates using the report generation agent, loading the generated report into a HTML control |
 
 ### Supporting Services (Category: Agent Services)
 
