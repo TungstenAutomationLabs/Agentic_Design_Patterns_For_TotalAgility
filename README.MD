@@ -205,7 +205,39 @@ These examples are **templates only** and are not fully functional agents. To ma
 | **registry/Agent Tool Registry.json** | Central registry mapping tools to their names, descriptions, and signatures. Agents reference this to discover available tools. |
 | **postman/...json** | Pre-built REST API requests for testing agents. Import into Postman for quick validation. |
 
+---
+
 ## Setup Instructions
+
+### Importing the TotalAgility Package
+
+To deploy the connector into your TotalAgility environment:
+
+1. Open **TotalAgility Designer**.
+2. Navigate to **Settings → Import / Export → Import Package**.
+3. Select the package file from the [`packages/`](packages/) directory.
+4. Follow the import wizard to map any environment-specific settings.
+
+> 📖 For detailed import instructions see the official documentation:
+> <https://docshield.tungstenautomation.com//TotalAgility/en_US/2026.1-sy4i5uG9Tu/help/Designer/All_Shared/Import/t_importpackage.html>
+
+### Configuring the Tool Use - Chat Agent
+
+The package includes an example agent called **Tool Use - Chat Agent**. To use it, you must register the agent process as a **AI Agent** in TotalAgility:
+
+1. Open **TotalAgility Advanced Studio**.
+2. Navigate to **Integration → Generative AI**.
+3. Add a new **AI Agent** entry and map it to the imported agent process.
+
+Once configured, the Tool Use - Chat Agent will be available for use in Generative AI chat controls.
+
+## Configuring the Custom Services for use in TotalAgility Studio (optional)
+
+To make the ```Get Session``` Custom Service in this package availabe TotalAgility Studio (formerly known as Quick Apps), you must enable the service for use. To do this: 
+
+> In Advanced Studio, navigate to ```System > System Settings > TotalAgility Studio > Enabled for Use``` and add the ```Get Session``` Custom Service, then hit Save.
+
+---
 
 ### Configure Web Service References
 
@@ -217,6 +249,11 @@ After importing the package:
    ```
    https://{{your_host}}/services/sdk/v1/
    ```
+
+
+
+
+
 
 ### Create Custom Agents and Tools
 
