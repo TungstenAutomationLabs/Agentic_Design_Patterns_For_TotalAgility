@@ -64,12 +64,22 @@ namespace MDCleaner
 
                 // Step 2: If the input didn't contain ``` markers, check if it starts with
                 // a bare language identifier like "json", "html", "xml", "csharp", etc.
-                // This handles cases where the LLM outputs something like: json {"key": "value"}
+                // followed by whitespace. E.g.: json {"key": "value"}
                 if (!input.Contains("```"))
                 {
                     string bareLanguagePattern = @"^(json|html|xml|csharp|css|javascript|js|typescript|ts|python|sql|yaml|yml|bash|sh|plaintext|text|markdown|md)\s+";
                     result = Regex.Replace(result, bareLanguagePattern, "", RegexOptions.IgnoreCase).Trim();
                 }
+
+                // Step 3: If the LLM outputs something like "json{" or "html<" (language identifier
+                // directly glued to the content with no space), replace it by preserving the content
+                // character that follows. E.g.: json{"key":"value"} -> {"key":"value"}
+                if (!input.Contains("```"))
+                {
+                    string gluedLanguagePattern = @"^(json|html|xml|csharp|css|javascript|js|typescript|ts|python|sql|yaml|yml|bash|sh|plaintext|text|markdown|md)(?=[^a-zA-Z])";
+                    result = Regex.Replace(result, gluedLanguagePattern, "", RegexOptions.IgnoreCase).Trim();
+                }
+
                 return result;
             }
             catch (Exception ex)
@@ -78,6 +88,7 @@ namespace MDCleaner
                 return input;
             }
         }
+
 
         /// <summary>
         /// Converts a given MIME type string back to its corresponding file extension.

@@ -247,7 +247,7 @@ To make the ```Get Session``` Custom Service in this package availabe TotalAgili
 
 After importing the package:
 
-1. Navigate to **System Data** > **Web Service References**
+1. Navigate to **Integration** > **Web Service References**
 2. Set the category to **"Default Category"**
 3. Edit the web service **"TA Base URL"** and replace `{{your_host}}` with your TotalAgility hostname:
    ```
