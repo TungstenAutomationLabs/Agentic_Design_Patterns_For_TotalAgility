@@ -182,6 +182,8 @@ These examples are **templates only** and are not fully functional agents. To ma
 .
 ├── LICENSE                           # License file
 ├── README.md                         # This file
+├── dll-code/                           # MDCleaner.dll source code
+│   └── Class1.cs                     # The code used in the  DLL included in the imported package (could be used as a script step if desired)
 ├── images/                           # Documentation images
 │   └── Agent_IO_Signature.png       # Visual diagram of the agent architecture
 ├── packages/                         # TotalAgility packages
