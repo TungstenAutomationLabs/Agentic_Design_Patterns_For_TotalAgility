@@ -223,7 +223,7 @@ To deploy the connector into your TotalAgility environment:
 
 ### Configuring the Tool Use - Chat Agent
 
-The package includes an example agent called **Tool Use - Chat Agent**. To use it, you must register the agent process as a **AI Agent** in TotalAgility:
+The package includes an example agent called **Tool Use - Chat Agent**. To use it in a Generative AI chat control in a TotalAgility form, you must register the agent process as a **AI Agent** in TotalAgility:
 
 1. Open **TotalAgility Advanced Studio**.
 2. Navigate to **Integration → Generative AI**.
