@@ -229,6 +229,8 @@ The package includes an example agent called **Tool Use - Chat Agent**. To use i
 2. Navigate to **Integration → Generative AI**.
 3. Add a new **AI Agent** entry and map it to the imported agent process.
 
+![Adding_the_Tool_Use-Chat_Agent_as_an_Agent](./images/Agent_IO_Signature.png)
+
 Once configured, the Tool Use - Chat Agent will be available for use in Generative AI chat controls.
 
 ## Configuring the Custom Services for use in TotalAgility Studio (optional)
